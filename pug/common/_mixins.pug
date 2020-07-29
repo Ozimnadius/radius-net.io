@@ -1,14 +1,46 @@
 mixin icon(iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
 
 mixin iconPath(iconPath,iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`${iconPath}/sprite.svg#${iconName}`)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`${iconPath}/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageClass, imageAlt)
-  if !imageAlt
-    - var alt = 'lorem'
-  else
-    - var alt = imageAlt
-  img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+    if !imageAlt
+        - var alt = 'lorem'
+    else
+        - var alt = imageAlt
+    if !imageClass
+        - var cls = ''
+    else
+        -var cls = imageClass
+
+    img(src=`${imagePath}`, alt=`${alt}`, class=`${cls}`)
+
+mixin tariffAction(title,style)
+    div(style=style).itsaction
+        .itsaction__action Акция
+        .itsaction__title!= title
+        .itsaction__sub Стоимость подключения
+        .itsaction__prices
+            .itsaction__prices-price 1 450 руб
+            .itsaction__prices-oldprice 2 900 руб
+        a(href='/').itsaction__link Подробнее об акции
+
+mixin tariff(obj)
+    div(style=obj.style).itariff
+        .itariff__action Акция
+        .itariff__title= obj.title
+        .itariff__graph
+            svg(height='120' width='120' data-percent=obj.percent).itariff__circle
+                circle(cx='50%' cy='50%' r='47%').itariff__circle-1
+                circle(cx='50%' cy='50%' r='47%').itariff__circle-2
+            .itariff__info
+                .itariff__info-top= obj.info.top
+                .itariff__info-center= obj.info.center
+                .itariff__info-bottom= obj.info.bottom
+        .itariff__price= obj.price
+        if obj.note
+          .itariff__note= obj.note
+        a(href='#').itariff__btn.btn.jsRequest Подключить

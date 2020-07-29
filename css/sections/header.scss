@@ -1,3 +1,314 @@
 .header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include sm-block{
+    margin-top: 15px;
+  }
 
+  &__top {
+    background-color: $text;
+    margin-bottom: 20px;
+    @include lg-block{
+      margin-bottom: 10px;
+    }
+    @include sm-block{
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      @include sm-block{
+          justify-content: flex-end;
+      }
+    }
+  }
+
+  &__addr {
+    margin-right: 30px;
+    color: $blue-light;
+    font-size: 16px;
+    @include tr;
+    @include lg-block{
+      margin-right: 0;
+    }
+    @include sm-block{
+      display: none;
+    }
+
+    &:hover {
+      color: $y;
+    }
+  }
+
+  &__call {
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    color: $blue-light;
+    @include tr;
+    @include lg-block{
+      margin-right: 0;
+      margin-left: 0;
+    }
+    @include sm-block{
+      display: none;
+    }
+
+    &:hover {
+      color: $y;
+    }
+
+    &-svg {
+      margin-right: 15px;
+      svg {
+        display: block;
+        fill: $y;
+      }
+    }
+
+    &-txt {
+      font-size: 16px;
+      text-decoration: underline;
+    }
+  }
+
+  &__tel {
+    margin-right: 40px;
+    color: $blue-light;
+    font-size: 16px;
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    text-decoration: underline;
+    @include tr;
+    @include lg-block{
+      margin-right: 0;
+    }
+    @include sm-block{
+      margin-right: 25px;
+    }
+
+    &-svg{
+      display: none;
+      @include sm-block{
+        display: block;
+      }
+
+      svg{
+        width: 23px;
+        height: 23px;
+        fill: $bg;
+        display: block;
+      }
+    }
+
+    &-txt{
+      @include sm-block{
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: $y;
+    }
+  }
+
+  &__lk {
+    display: flex;
+    align-items: center;
+    background-color: $y;
+    padding: 11px 14px;
+    color: $bg;
+    font-size: 16px;
+    font-weight: 500;
+    @include tr;
+    @include sm-block{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      padding: 0;
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: $y3;
+    }
+
+    &-svg {
+      margin-right: 10px;
+      @include sm-block{
+        margin-right: 0;
+      }
+      svg{
+        fill: $bg;
+        @include sm-block{
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &-txt {
+      @include sm-block{
+        display: none;
+      }
+    }
+  }
+
+  &__bottom {
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__mbtn {
+    display: none;
+    fill: $bg;
+    margin-right: 25px;
+    @include lg-block {
+      display: block;
+    }
+    @include sm-block{
+      margin-right: 20px;
+    }
+  }
+
+  &__logo {
+    margin-right: 80px;
+    @include to(1360px){
+      margin-right: 40px;
+    };
+    @include lg-block {
+      margin-right: 0;
+      width: 190px;
+    }
+    @include sm-block{
+      width: 160px;
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+    @include lg-block{
+      display: none;
+    }
+    @include sm-block{
+      display: none;
+    }
+  }
+
+  &_second {
+    .header {
+      &__bottom {
+        background-color: $menu;
+      }
+    }
+  }
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -20px;
+  margin-right: -20px;
+  @include to(1360px){
+    margin-left: -10px;
+    margin-right: -10px;
+  };
+
+  &__item {
+    color: $bg;
+    margin: 0 20px;
+    position: relative;
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    @include tr;
+    @include to(1360px){
+      margin: 0 10px;
+    };
+    &:hover {
+      color: $y;
+
+      .nav__link_arr {
+        &:after {
+          border-color: $y transparent transparent transparent;
+        }
+      }
+
+      .nav__sub {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    padding: 20px 0;
+    position: relative;
+    display: block;
+
+
+    &_arr {
+      padding-right: 20px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 4px 0 4px;
+        border-color: $bg transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -1px;
+        @include tr;
+      }
+    }
+  }
+
+
+  &__sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 254px;
+    border-radius: 10px;
+    border: 1px solid $grey6;
+    background-color: $grey7;
+
+    padding: 5px 20px;
+
+  }
+
+  &__subitem {
+    display: block;
+    color: $text;
+    font-family: 'Futura PT';
+    font-weight: 500;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba($grey6, .2);
+    @include tr;
+
+    &:hover {
+      color: $y;
+    }
+
+    &:last-child {
+      border-color: transparent;
+    }
+  }
 }

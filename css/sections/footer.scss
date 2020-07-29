@@ -1,3 +1,248 @@
 .footer {
+  background-color: #0e1e34;
 
+  &__top{
+    padding-bottom: 130px;
+    @include lg-block{
+      padding-bottom: 40px;
+    }
+    @include sm-block{
+      padding-bottom: 0;
+    }
+  }
+
+  &__row{
+    align-items: center;
+    padding: 50px 0;
+    border-bottom: 1px solid $blue-light;
+    margin-bottom: 30px;
+    @include lg-block{
+      padding: 60px 0;
+      margin-bottom: 60px;
+    }
+    @include sm-block{
+      padding: 50px 0;
+      margin-bottom: 40px;
+    }
+
+  }
+
+  &__left,&__right{
+    @include col;
+    @include size(6);
+  }
+
+  &__left{
+    @include size-lg(24);
+    @include lg-block{
+      margin-bottom: 45px;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__center{
+    @include col;
+    @include size(12);
+    @include size-lg(24/8*6);
+    @include size-sm(24);
+    @include sm-block{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__right{
+    display: flex;
+    justify-content: flex-end;
+    @include size-lg(24/8*2);
+    @include size-sm(24);
+    @include sm-block{
+        justify-content: center;
+    }
+  }
+
+  &__logo{
+    display: block;
+    @include sm-block{
+      width: 108px;
+    }
+  }
+
+  &__txt{
+    color: $bg;
+    font-size: 22px;
+    @include sm-block{
+      font-size: 16px;
+    }
+  }
+
+  &__col{
+    @include col;
+    @include size(6);
+    @include size-lg(8);
+    @include lg-block{
+      margin-bottom: 50px;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &:nth-child(2){
+      @include sm-block{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item{
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $bg;
+    @include tr;
+
+    &_grey{
+      color: $blue-light;
+    }
+
+
+    &:hover{
+      color: $y;
+    }
+  }
+
+  &__addr{
+    display: block;
+    color: $blue-light;
+    margin-bottom: 25px;
+    @include tr;
+
+    &:hover{
+      color: $y;
+    }
+  }
+
+  &__tels{
+    margin-bottom: 35px;
+  }
+
+  &__tel{
+    display: block;
+    color: $blue-light;
+    margin-bottom: 5px;
+    @include tr;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &:hover{
+      color: $y;
+    }
+  }
+
+  &__socials{
+    display: flex;
+  }
+
+  &__social{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: 2px solid $blue-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    @include tr;
+
+
+    svg{
+      fill: $blue-light;
+      @include tr;
+    }
+
+    &:hover{
+      border-color: $y;
+      svg{
+        fill: $y;
+      }
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  &__bottom{
+    background-color: #091626;
+    padding-top: 12px;
+    padding-bottom: 2px;
+    @include lg-block{
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    &-container{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      @include lg-block{
+          justify-content: center;
+      }
+    }
+  }
+
+  &__copy{
+    color: $blue-light;
+    margin-bottom: 10px;
+    @include lg-block{
+      margin-right: 20px;
+    }
+  }
+
+  &__policy{
+    color: $blue-light;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    @include tr;
+    &:hover{
+      color: $y;
+    }
+  }
+
+  &__vendor{
+    display: flex;
+    align-items: flex-end;
+    color: $blue-light;
+    line-height: 1;
+    margin-bottom: 10px;
+    @include tr;
+
+    &:hover{
+      color: $y;
+    }
+    &-svg {
+      display: flex;
+      align-items: center;
+      svg {
+        display: block;
+      }
+    }
+    &-txt{
+      margin-right: 10px;
+
+    }
+  }
 }

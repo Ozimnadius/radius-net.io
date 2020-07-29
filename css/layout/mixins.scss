@@ -1,6 +1,10 @@
 //variables
 $vh: 1080;
 
+@mixin tr(){
+  transition: .3s;
+}
+
 @function rem($size) {
   $remSize: $size / $font-size;
   @return $remSize * 1rem;
@@ -21,54 +25,158 @@ $vh: 1080;
 }
 
 @mixin content() {
-  ul {
-    margin: 1em 0;
-    padding-left: 40px;
-    li {
-      list-style: disc;
+
+  >* {
+    &:first-child {
+      margin-top: 0;
     }
   }
 
-  h1 {
-    margin: 0.67em 0;
+  h1,h2,h3,h4,h5,h6,p {
+    margin: 40px 0;
+    @include lg-block{
+      margin: 30px 0;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
-  h2 {
-    margin: 0.83em 0;
+
+  ul {
+    margin: 40px 0 40px 25px;
+
+    li {
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 6px;
+        height: 6px;
+        background-color: $blue;
+        border-radius: 50%;
+        margin-right: 15px;
+        line-height: inherit;
+        position: relative;
+        top: -2px;
+      }
+
+      ol {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        counter-reset: li;
+
+        li {
+          &:before {
+            counter-increment: li;
+            content: counters(li, ".") ". ";
+            margin-right: 10px;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background: none;
+            top: 0;
+          }
+        }
+      }
+
+      ul {
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
   }
-  h3 {
-    margin: 1em 0;
+
+  ol {
+    margin: 40px 0 40px 25px;
+    counter-reset: li;
+
+    li {
+      &:before {
+        color: $blue;
+        counter-increment: li;
+        content: counters(li, ".") ". ";
+        margin-right: 10px;
+        display: inline-block;
+      }
+
+      ul {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        counter-reset: none;
+
+        li {
+          &:before {
+            content: '';
+          }
+        }
+      }
+
+      ol{
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
+
   }
-  h4 {
-    margin: 1.33em 0;
+
+  a{
+    color: $blue;
+    text-decoration: underline;
+    @include tr;
+
+    &:hover{
+      color: $y;
+    }
   }
-  h5 {
-    margin: 1.67em 0;
+
+  table {
+    margin-bottom: 40px;
+    width: 100%;
+    border-collapse: collapse;
+
+    tr{
+      &:nth-child(even){
+        background-color: $grey4;
+      }
+    }
+
+    th{
+      color: $bg;
+      background-color: $text;
+    }
+
+    td {
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+    }
   }
-  h5 {
-    margin: 2.33em 0;
-  }
-  p {
-    margin: 1em 0;
-  }
+
 }
 
 @mixin headers() {
   h1 {
-    font-size: 2rem;
+    font-size: 45px;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 40px;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 35px;
   }
   h4 {
-    font-size: 1rem;
+    font-size: 30px;
   }
   h5 {
-    font-size: 0.875rem;
+    font-size: 25px;
   }
   h6 {
     font-size: 0.75rem;
   }
+}
+
+@mixin demi(){
+  font-family: "Futura PT Demi";
+  font-weight: 500;
 }

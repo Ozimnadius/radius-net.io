@@ -1,0 +1,249 @@
+.banner {
+  padding-top: 40px;
+  @include sm-block {
+    padding-top: 0 !important;
+  }
+
+  &__wrapper {
+    position: relative;
+    @include sm-block{
+      padding-bottom: 60px;
+    }
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    background-position: 0 0;
+    background-size: cover;
+    height: 563px;
+    @include lg-block {
+      height: 428px;
+    }
+    @include sm-block {
+      height: auto;
+      background: none !important;
+    }
+  }
+
+  &__container {
+    height: 100%;
+  }
+
+  &__row {
+    align-items: center;
+    height: 100%;
+  }
+
+  &__left {
+    @include col;
+    @include shift-left(1);
+    @include shift-right(0.5);
+    @include size(10);
+    @include size-lg(12);
+    @include shift-lg-left(0);
+    @include shift-lg-right(0);
+    @include sm-block {
+      @include col;
+      order: 1;
+      text-align: center;
+    }
+    @include size-sm(24);
+  }
+
+  &__right {
+    @include col;
+    @include size(12.5);
+    @include size-lg(12);
+    @include size-sm(24);
+    @include sm-block {
+      margin-left: -5px;
+      margin-right: -5px;
+      width: calc(100% + 10px);
+      margin-bottom: 35px;
+    }
+
+    picture{
+      display: block;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $bg;
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: lh(50, 52);
+    @include lg-block {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    @include sm-block{
+      color: $text;
+      font-size: 24px;
+      margin-bottom: 25px;
+
+    }
+  }
+
+  &__txt {
+    color: $blue-light;
+    font-size: 20px;
+    margin-bottom: 30px;
+    @include sm-block{
+      color: $text;
+      font-size: 16px;
+      padding: 0 40px;
+    }
+  }
+
+  &__btns {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    @include lg-block {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+
+  &__btn {
+    width: calc(50% - 20px);
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @include lg-block {
+      height: 45px;
+      width: calc(50% - 10px);
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    &.btn3{
+      @include sm-block{
+        border-color: $y;
+        color: $y;
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @include lg-block {
+      display: none;
+    }
+
+    &-container {
+      position: relative;
+    }
+  }
+
+  &__arr {
+    pointer-events: all;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include tr;
+
+    &.swiper-button-disabled {
+      opacity: .2;
+
+      &:hover {
+        background-color: $bg;
+      }
+    }
+
+    &.swiper-button-lock {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $y3;
+    }
+  }
+
+  &__prev {
+    right: calc(100% - 35px);
+  }
+
+  &__next {
+    left: calc(100% - 35px);
+  }
+
+  &__pag {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    @include sm-block{
+      bottom: 20px;
+    }
+
+    &-wrapper {
+      margin-left: -7px;
+      margin-right: -7px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-pagination-lock {
+      display: none;
+    }
+
+
+    .swiper-pagination-bullet {
+      width: 11px;
+      height: 11px;
+      background-color: $bg;
+      opacity: 1;
+      margin: 0 7px;
+      outline: none;
+      border-color: $y;
+      @include tr;
+
+      @include sm-block{
+        width: 8px;
+        height: 9px;
+        background-color: $y;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 22px;
+      height: 22px;
+      border: 4px solid $y;
+      background-color: transparent;
+      @include sm-block{
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+  }
+
+
+}

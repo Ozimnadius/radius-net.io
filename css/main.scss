@@ -1,30 +1,43 @@
 //variables
 //fonts
-$font: 'Gilroy', Arial, sans-serif;
+$font: 'Futura PT', Arial, sans-serif;
 
 //colors
-$text: #4D4D4D;
 $bg: #ffffff;
+$grey6: #cccccc;
+$red: #eb5757;
+$grey4: #e0e0e0;
+$blue: #268be9;
+$grey5: #f2f2f2;
+$grey3: #bdbdbd;
+$y: #fd8f10;
+$blue-light: #8ba3c3;
+$grey2: #828282;
+$grey7: #f6f6f6;
+$y3: #ffc444;
+$y2: #ffe922;
+$menu: #031c33;
+$grey: #4f4f4f;
+$dark: #0f3642;
+$text: #112e49;
 
 //another
-$font-size: 16px;
+$font-size: 18px;
 
 //layout
-/*-----------------SECTION-MIXINS--------------------*/
 @import "layout/mixins";
-/*------------------------SECTION-FONTS----------------*/
 @import "layout/fonts";
-/*------------------------SECTION-SMART-GRID----------------*/
 @import "layout/smart-grid";
-/*------------------------SECTION-ADJUSTMENT----------------*/
 @import "layout/adjustment";
-/*------------------------SECTION-COMMON----------------*/
 @import "layout/common";
 
 //sections
-/*------------------------SECTION-HEADER----------------*/
 @import "sections/header";
-/*------------------------SECTION-FOOTER---------------------*/
+@import "sections/form";
+@import "sections/channels";
+@import "sections/mmenu";
+@import "sections/banner";
+@import "sections/index";
 @import "sections/footer";
 
 

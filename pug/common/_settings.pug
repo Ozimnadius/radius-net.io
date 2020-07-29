@@ -1,1 +1,316 @@
-- var menu = { '1': 'Page1', '2': 'Page2', '3': 'Page3'};
+-
+    var nav = [
+        {
+            title: 'Интернет',
+            link: '/',
+            sub: [
+                {
+                    title: 'В квартиру',
+                    link: '/'
+                },
+                {
+                    title: 'В частный дом',
+                    link: '/'
+                },
+                {
+                    title: 'В офис',
+                    link: '/'
+                },
+
+            ]
+        },
+        {
+            title: 'Интерактивное ТВ',
+            link: '/',
+        },
+        {
+            title: 'Оборудование',
+            link: '/',
+        },
+        {
+            title: 'Новости',
+            link: '/',
+        },
+        {
+            title: 'Акции',
+            link: '/',
+        },
+        {
+            title: 'Помощь',
+            link: '/',
+        },
+        {
+            title: 'Контакты',
+            link: '/',
+        },
+
+    ];
+
+-
+    var footerNav = [
+        {
+            itemDopCls: '',
+            list: [
+                {
+                    title: 'ИНТЕРНЕТ В ЧАСТНЫЙ ДОМ',
+                    link: '/'
+                },
+                {
+                    title: 'ИНТЕРНЕТ В КВАРТИРУ',
+                    link: '/'
+                },
+                {
+                    title: 'Интернет в офис',
+                    link: '/'
+                },
+                {
+                    title: 'Интерактивное ТВ',
+                    link: '/'
+                },
+                {
+                    title: 'АКЦИИ',
+                    link: '/'
+                },
+
+            ]
+        },
+        {
+            itemDopCls: 'footer__item_grey',
+            list: [
+                {
+                    title: 'СПРАВОЧНИК АБОНЕНТА',
+                    link: '/'
+                },
+                {
+                    title: 'РАБОТЫ НА СЕТИ',
+                    link: '/'
+                },
+                {
+                    title: 'ПРОВЕРИТЬ СКОРОСТЬ',
+                    link: '/'
+                },
+                {
+                    title: 'ОБОРУДОВАНИЕ',
+                    link: '/'
+                },
+                {
+                    title: 'КАК ОПЛАТИТЬ?',
+                    link: '/'
+                },
+                {
+                    title: 'ПОМОЩЬ',
+                    link: '/'
+                }
+            ]
+        },
+        {
+            itemDopCls: 'footer__item_grey',
+            list: [
+                {
+                    title: 'О КОМПАНИИ',
+                    link: '/'
+                },
+                {
+                    title: 'НОВОСТИ',
+                    link: '/'
+                },
+                {
+                    title: 'КОНТАКТЫ',
+                    link: '/'
+                }
+            ]
+        },
+
+    ];
+
+-
+    var tariffList = [
+        {
+            title:'Лайт',
+            percent: '25',
+            style: 'background-color: #f6f6f6;',
+            info: {
+                top:'до',
+                center:'2',
+                bottom:'мбит/с'
+            },
+            price: '500 руб/мес',
+            note: '*с 4 месяца 800 руб /мес'
+        },
+        {
+            title:'Стандарт',
+            percent: '50',
+            style: 'background-color: #f6f6f6;',
+            info: {
+                top:'до',
+                center:'4',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1100 руб /мес'
+        },
+        {
+            title:'Комфорт',
+            percent: '75',
+            style: 'background-color: #f6f6f6;',
+            info: {
+                top:'до',
+                center:'10',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1600 руб /мес'
+        }
+    ];
+
+-
+    var sliderList = [
+        {
+            title:'Особый 2',
+            percent: '25',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'2',
+                bottom:'мбит/с'
+            },
+            price: '500 руб/мес',
+            note: '*с 4 месяца 800 руб /мес'
+        },
+        {
+            title:'Особый 5',
+            percent: '50',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'4',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1100 руб /мес'
+        },
+        {
+            title:'Особый 10',
+            percent: '75',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'10',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1600 руб /мес'
+        },
+        {
+            title:'Особый 2',
+            percent: '25',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'2',
+                bottom:'мбит/с'
+            },
+            price: '500 руб/мес',
+            note: '*с 4 месяца 800 руб /мес'
+        },
+        {
+            title:'Особый 5',
+            percent: '50',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'4',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1100 руб /мес'
+        },
+        {
+            title:'Особый 10',
+            percent: '75',
+            style: 'background-color: #ffffff;',
+            info: {
+                top:'до',
+                center:'10',
+                bottom:'мбит/с'
+            },
+            price: '550 руб/мес',
+            note: '*с 4 месяца 1600 руб /мес'
+        },
+
+    ];
+
+-
+    var packs = [
+        {
+            title: 'Стандарт',
+            price: '199 руб/мес',
+            link: '200 каналов',
+            id: 1
+        },
+        {
+            title: 'Оптима',
+            price: '449 руб/мес',
+            link: '250 каналов',
+            id: 1
+        },
+        {
+            title: 'Эксклюзив',
+            price: '749 руб/мес',
+            link: '275 каналов',
+            id: 1
+        },
+        {
+            cls: 'ipack_exc',
+            title: 'Эксклюзив <span class="y">+ КИНО</span>',
+            price: '999 руб/мес',
+            link: '280 каналов',
+            sub: '+IVI +START +MEGOGO +AMEDIATEKA',
+            id: 2
+        }
+    ];
+
+-
+    var dops = [
+        {
+            src: 'images/content/index/dops/1.jpg',
+            title: 'Настрой кино',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/2.jpg',
+            title: 'Матч! Премьер',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/3.jpg',
+            title: 'Ночной',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/4.jpg',
+            title: 'Матч! Футбол',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/5.jpg',
+            title: 'Дождь',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/6.jpg',
+            title: 'Шант премиум',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/7.jpg',
+            title: '1 доп просмотр',
+            id: 3
+        },
+        {
+            src: 'images/content/index/dops/8.jpg',
+            title: '2 доп просмотра',
+            id: 3
+        },
+
+    ];

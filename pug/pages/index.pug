@@ -2,7 +2,216 @@ extends ../main
 
 block variables
     - var title = 'Главная'
+    - var banner = {enable: true, bread: false};
 
 block content
-    h1 Страничка "Главная"
-        +icon('001-twitter', 'svg')
+    main.index
+        //- tariffs
+        section.index__slider
+            .islider
+                .container
+                    .islider__top
+                        h2.islider__title
+                            | Популярные тарифы&nbsp;
+                            span.islider__title_y Интернет
+                        .islider__sub
+                            | Подборную информацию об акциях смотрите в разделе&nbsp;
+                            a(href='/') Акции
+                    .islider__bottom
+                        .row.islider__row
+                            .islider__left
+                                +tariffAction('Тарифные планы с промо-периодом <b>до 3 месяцев*</b>','background-color: #112643')
+                            .islider__right
+                                div(data-id=1).islider__slider.swiper-container
+                                    .swiper-wrapper
+                                        each i in tariffList
+                                            .swiper-slide.islider__slide
+                                                +tariff(i)
+                                a(href='#' data-id=1).islider__arr.islider__prev
+                                    <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.16228 10.6442L13.6698 17.8918C14.0093 18.1834 14.222 18.6007 14.2613 19.0523C14.3006 19.5039 14.1632 19.953 13.8792 20.3012C13.5953 20.6495 13.1879 20.8685 12.7463 20.9104C12.3048 20.9522 11.865 20.8134 11.5233 20.5245L1.47135 11.9606C1.28287 11.7996 1.13126 11.5983 1.02722 11.3708C0.923186 11.1434 0.869264 10.8953 0.869264 10.6443C0.869265 10.3932 0.923186 10.1451 1.02722 9.91767C1.13126 9.69021 1.28287 9.48888 1.47135 9.32789L11.5233 0.764067C11.8648 0.473705 12.3052 0.333828 12.7475 0.375162C13.1899 0.416495 13.5981 0.635655 13.8826 0.984503C14.167 1.33335 14.3043 1.78335 14.2644 2.23566C14.2245 2.68797 14.0106 3.10559 13.6698 3.39679L5.16228 10.6442Z" fill="#112E49"/>
+                                    </svg>
+                                a(href='#' data-id=1).islider__arr.islider__next
+                                    <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.83772 10.3558L1.33024 3.10822C0.990672 2.81662 0.777965 2.39933 0.738703 1.94773C0.699442 1.49614 0.836825 1.04703 1.12077 0.698774C1.40471 0.350515 1.81208 0.131482 2.25365 0.0896406C2.69523 0.0477988 3.13503 0.186558 3.47674 0.475533L13.5287 9.03939C13.7171 9.20038 13.8687 9.40171 13.9728 9.62917C14.0768 9.85662 14.1307 10.1047 14.1307 10.3557C14.1307 10.6068 14.0768 10.8549 13.9728 11.0823C13.8687 11.3098 13.7171 11.5111 13.5287 11.6721L3.47674 20.2359C3.13518 20.5263 2.69485 20.6662 2.25248 20.6248C1.81011 20.5835 1.40187 20.3643 1.11745 20.0155C0.83303 19.6667 0.695682 19.2166 0.735582 18.7643C0.775481 18.312 0.989365 17.8944 1.33025 17.6032L9.83772 10.3558Z" fill="#112E49"/>
+                                    </svg>
+                        //.itariffs__row
+                        //    .itariffs__item
+                        //        +tariffAction('Тарифные планы с промо-периодом <b>до 3 месяцев*</b>','background-color: #112643')
+                        //    each i in tariffList
+                        //        .itariffs__item
+                        //            +tariff(i)
+
+                        .islider__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+
+        //- slider
+        section.index__slider
+            div(style='background-color: #f6f6f6;').islider
+                .container
+                    .row.islider__row
+                        .islider__left
+                            +tariffAction('Линейка тарифов <b>«Особый»*</b>','background-color: #0f3642;')
+                        .islider__right
+                            div(data-id=2).islider__slider.swiper-container
+                                .swiper-wrapper
+                                    each i in sliderList
+                                        .swiper-slide.islider__slide
+                                            +tariff(i)
+                            a(href='#' data-id=2).islider__arr.islider__prev
+                                <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.16228 10.6442L13.6698 17.8918C14.0093 18.1834 14.222 18.6007 14.2613 19.0523C14.3006 19.5039 14.1632 19.953 13.8792 20.3012C13.5953 20.6495 13.1879 20.8685 12.7463 20.9104C12.3048 20.9522 11.865 20.8134 11.5233 20.5245L1.47135 11.9606C1.28287 11.7996 1.13126 11.5983 1.02722 11.3708C0.923186 11.1434 0.869264 10.8953 0.869264 10.6443C0.869265 10.3932 0.923186 10.1451 1.02722 9.91767C1.13126 9.69021 1.28287 9.48888 1.47135 9.32789L11.5233 0.764067C11.8648 0.473705 12.3052 0.333828 12.7475 0.375162C13.1899 0.416495 13.5981 0.635655 13.8826 0.984503C14.167 1.33335 14.3043 1.78335 14.2644 2.23566C14.2245 2.68797 14.0106 3.10559 13.6698 3.39679L5.16228 10.6442Z" fill="#112E49"/>
+                                </svg>
+                            a(href='#' data-id=2).islider__arr.islider__next
+                                <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.83772 10.3558L1.33024 3.10822C0.990672 2.81662 0.777965 2.39933 0.738703 1.94773C0.699442 1.49614 0.836825 1.04703 1.12077 0.698774C1.40471 0.350515 1.81208 0.131482 2.25365 0.0896406C2.69523 0.0477988 3.13503 0.186558 3.47674 0.475533L13.5287 9.03939C13.7171 9.20038 13.8687 9.40171 13.9728 9.62917C14.0768 9.85662 14.1307 10.1047 14.1307 10.3557C14.1307 10.6068 14.0768 10.8549 13.9728 11.0823C13.8687 11.3098 13.7171 11.5111 13.5287 11.6721L3.47674 20.2359C3.13518 20.5263 2.69485 20.6662 2.25248 20.6248C1.81011 20.5835 1.40187 20.3643 1.11745 20.0155C0.83303 19.6667 0.695682 19.2166 0.735582 18.7643C0.775481 18.312 0.989365 17.8944 1.33025 17.6032L9.83772 10.3558Z" fill="#112E49"/>
+                                </svg>
+                    .islider__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+        //- promo
+        section.index__promo
+            .ipromo
+                .ipromo__img
+                    picture
+                        source(srcset='images/content/index/promo/img.jpg' type='image/jpeg' media='(min-width:1200px)')
+                        source(srcset='images/content/index/promo/img-t.jpg' type='image/jpeg' media='(min-width:768px)')
+                        source(srcset='images/content/index/promo/img-m.jpg' type='image/jpeg' media='(min-width:320px)')
+                        img(src='images/content/index/promo/img.jpg' alt='lorem1').ipromo__img-img
+                    //+image('images/content/index/promo/img.jpg','ipromo__img-img')
+                    .container.ipromo__container
+                        h2.ipromo__title
+                            | Интерактивное&nbsp;
+                            span.gr ТВ
+                            span.ipromo__title-svg.
+                                <svg width="197" height="168" viewBox="0 0 197 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M137.718 141.468C144.813 131.772 148.923 119.815 148.99 106.938C149.162 74.1475 122.625 47.3556 89.8027 47.1834C68.5209 47.0718 49.7281 58.2032 39.149 74.9179L48.4081 81.2553C57.023 67.525 72.3587 58.3219 89.594 58.4124C116.271 58.5523 137.74 80.2266 137.6 106.879C137.544 117.509 134.046 127.224 128.309 135.129L137.718 141.468Z" fill="url(#paint0_linear)"/>
+                                <path d="M89.9884 11.8473C142.294 12.1217 184.634 54.8682 184.36 107.124C184.254 127.337 177.862 145.871 166.99 161.236L176.399 167.575C188.479 150.419 195.633 129.643 195.75 107.184C196.058 48.6393 148.648 0.775247 90.0481 0.467821C52.5801 0.271258 19.5062 19.5631 0.618192 48.8119L9.87728 55.1493C26.8004 29.0346 56.4171 11.6712 89.9884 11.8473Z" fill="url(#paint1_linear)"/>
+                                <defs>
+                                <linearGradient id="paint0_linear" x1="39.0452" y1="94.7044" x2="149.051" y2="95.2815" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FD8F10"/>
+                                <stop offset="1" stop-color="#FFE922"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear" x1="0.429965" y1="84.6906" x2="195.863" y2="85.7159" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FD8F10"/>
+                                <stop offset="1" stop-color="#FFE922"/>
+                                </linearGradient>
+                                </defs>
+                                </svg>
+
+
+                        .ipromo__price
+                            | от&nbsp;
+                            span.gr 199 руб
+                            | /мес
+                .container
+                    .ipromo__sub Управляй просмотром. Архив ТВ за 7 дней
+                    a(href='#').ipromo__btn.btn2.jsCall
+                        span.btn2__layer
+                        span.btn2__txt Попробуй бесплатно*
+                    .ipromo__note *Акция действует для всех абонентов, впервые пользующихся услугой интерактивного ТВ, представляемого ООО “ЛайфСтрим” (ОГРН 1127746635170), а также для абонентов, впервые получающих доступ к онлайн-кинотеатрам ivi, MEGOGO, START, Amediateka. С подробными условиями акции можно ознакомиться на сайте smotreshka.tv/action. Не является стимулирующим мероприятием.
+        //- packs
+        section.index__packs
+            .ipacks
+                .container
+                    h2.ipacks__title
+                        | Выбери&nbsp;
+                        span.gr свой пакет
+                    .row
+                        each i in packs
+                            .ipacks__item
+                                div(class=i.cls data-id=i.id).ipack.jsOpenPacks
+                                    .ipack__title!= i.title
+                                    a(href='#').ipack__link
+                                        span.ipack__link-price= i.price
+                                        span.ipack__link-link= i.link
+                                    if i.sub
+                                        .ipack__sub= i.sub
+                                    a(href='#').ipack__btn.btn4.jsRequest
+                                        span.btn4__layer
+                                        span.btn4__txt Подключить
+        //- dops
+        section.index__dops
+            .idops
+                .container
+                    h2.idops__title
+                        span.gr Дополнительные&nbsp;
+                        | пакеты телеканалов
+                    .row
+                        each i in dops
+                            .idops__item
+                                div(data-id=i.id).idop.jsOpenPacks
+                                    .idop__top
+                                        +image(i.src,'idop__img')
+                                    .idop__bottom
+                                        .idop__title= i.title
+                                        a(href='#').idop__link
+                                            span.idop__link-price 380 руб/мес
+                                            span.idop__link-link +5 каналов
+                                        a(href='#').idop__btn.btn4.jsRequest
+                                            span.btn4__layer
+                                            span.btn4__txt Подключить
+        //- feed
+        section.index__feed
+            .ifeed
+                .container
+                    .row
+                        form(action='ajax.php' method='POST').ifeed__form.form
+                            h2.form__title Оставить заявку
+                            .form__sub Оставьте свои данные и наш специалист свяжется с вами в ближайшее время
+                            .form__error Заполните пожалуйста обязательные поля
+                            .form__fields
+                                .form__field
+                                    input(type='text' name='ifeedName' placeholder='Как Вас зовут?').input
+                                .form__field
+                                    input(type='tel' name='ifeedTel' placeholder='+7 (___) ___-__-__').input
+                                .form__field
+                                    input(type='email' name='ifeedEmail' placeholder='Эл. почта').input
+                                .form__field
+                                    input(type='text' name='ifeedAddr' placeholder='Укажите свой адрес').input
+                            .form__accept
+                                label.accept
+                                    input(type='checkbox' name='ifeedAccept' checked=true).accept__input
+                                    span.accept__fake
+                                        span.accept__check.
+                                            <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                                            </svg>
+                                        span.accept__txt Я согласен (а) с политикой конфиденциальности
+                            button(type='submit').form__submit.btn2.ifeed__btn
+                                span.btn2__layer
+                                span.btn2__txt Отправить
+                            input(type='hidden' name='action' value='ifeed')
+
+        //- about
+        section.index__about
+            .iabout
+                .container
+                    .iabout__row
+                        .iabout__col
+                            .iabout__top
+                                .iabout__img
+                                    +image('images/content/index/about/1.jpg')
+                            .iabout__bottom
+                                .iabout__content.content
+                                    p Но что делать тем, кто хочет провести интернет в частный дом в Улан-Удэ, расположенный на окраине, где возможности кабельного подключения ограничены? Необходимо искать беспроводной вариант, который будет ничем не хуже.
+                                    p Интернет в частном секторе, в загородном коттедже, в сельской местности остается проблемой, несмотря на развитие технологий. Решить ее помогает компания Радиус-NET. С интернетом от нашей компании вы сможете пользоваться быстрым безлимитным интернетом в полном объеме: смотреть любимые фильмы и сериалы, играть в онлайн-игры, общаться в соцсетях, искать нужную информацию во всемирной паутине и всегда оставаться на связи.
+                                a(href='/').btn2.iabout__btn
+                                    span.btn2__layer
+                                    span.btn2__txt Подобрнее
+
+                        .iabout__col
+                            .iabout__top
+                                h2.iabout__title Компания «Радиус-NET» - мы подключаем лучший интернет для дома и офиса в г.Улан-Удэ
+                                .iabout__content.content
+                                    p Наша компания занимается подключением высокоскоростного интернета в частные дома, квартиры, офисы, дачи. Мы можем вам предложить тарифные планы на высокой скорости за приемлемую цену.
+                                    p Огромные возможности интернета делают его востребованным во всех сферах: в быту, на работе, на отдыхе. Он помогает быстро найти и купить нужную вещь, связаться с друзьями, находящимися за сотни километров, приятно провести время за сетевой игрой, оплатить все счета не выходя из дома.
+                            .iabout__bottom
+                                .iabout__img
+                                    +image('images/content/index/about/2.jpg')
+
+
+
+
+
+
+
+
+

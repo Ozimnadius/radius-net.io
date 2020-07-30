@@ -43,6 +43,12 @@ $vh: 1080;
     }
   }
 
+  p{
+    b{
+      @include demi;
+    }
+  }
+
   ul {
     margin: 40px 0 40px 25px;
 
@@ -158,18 +164,23 @@ $vh: 1080;
 @mixin headers() {
   h1 {
     font-size: 45px;
+    font-weight: 900;
   }
   h2 {
     font-size: 40px;
+    font-weight: 900;
   }
   h3 {
     font-size: 35px;
+    font-weight: 900;
   }
   h4 {
     font-size: 30px;
+    font-weight: 900;
   }
   h5 {
     font-size: 25px;
+    font-weight: 900;
   }
   h6 {
     font-size: 0.75rem;

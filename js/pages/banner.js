@@ -14,6 +14,13 @@ $(function () {
         navigation: {
             nextEl: '.banner__next',
             prevEl: '.banner__prev',
+        },
+        on: {
+            init: function () {
+               if (this.slides.length < 2){
+                   this.$el.addClass('noslide');
+               }
+            },
         }
     });
 });

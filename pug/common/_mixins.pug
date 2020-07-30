@@ -18,6 +18,28 @@ mixin image(imagePath, imageClass, imageAlt)
 
     img(src=`${imagePath}`, alt=`${alt}`, class=`${cls}`)
 
+mixin isliderSimple(style)
+    div(style=style).islider
+        .container
+            .row.islider__row
+                .islider__left
+                    +tariffAction('Линейка тарифов <b>«Особый»*</b>','background-color: #0f3642;')
+                .islider__right
+                    div(data-id=2).islider__slider.swiper-container
+                        .swiper-wrapper
+                            each i in sliderList
+                                .swiper-slide.islider__slide
+                                    +tariff(i)
+                    a(href='#' data-id=2).islider__arr.islider__prev
+                        <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.16228 10.6442L13.6698 17.8918C14.0093 18.1834 14.222 18.6007 14.2613 19.0523C14.3006 19.5039 14.1632 19.953 13.8792 20.3012C13.5953 20.6495 13.1879 20.8685 12.7463 20.9104C12.3048 20.9522 11.865 20.8134 11.5233 20.5245L1.47135 11.9606C1.28287 11.7996 1.13126 11.5983 1.02722 11.3708C0.923186 11.1434 0.869264 10.8953 0.869264 10.6443C0.869265 10.3932 0.923186 10.1451 1.02722 9.91767C1.13126 9.69021 1.28287 9.48888 1.47135 9.32789L11.5233 0.764067C11.8648 0.473705 12.3052 0.333828 12.7475 0.375162C13.1899 0.416495 13.5981 0.635655 13.8826 0.984503C14.167 1.33335 14.3043 1.78335 14.2644 2.23566C14.2245 2.68797 14.0106 3.10559 13.6698 3.39679L5.16228 10.6442Z" fill="#112E49"/>
+                        </svg>
+                    a(href='#' data-id=2).islider__arr.islider__next
+                        <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.83772 10.3558L1.33024 3.10822C0.990672 2.81662 0.777965 2.39933 0.738703 1.94773C0.699442 1.49614 0.836825 1.04703 1.12077 0.698774C1.40471 0.350515 1.81208 0.131482 2.25365 0.0896406C2.69523 0.0477988 3.13503 0.186558 3.47674 0.475533L13.5287 9.03939C13.7171 9.20038 13.8687 9.40171 13.9728 9.62917C14.0768 9.85662 14.1307 10.1047 14.1307 10.3557C14.1307 10.6068 14.0768 10.8549 13.9728 11.0823C13.8687 11.3098 13.7171 11.5111 13.5287 11.6721L3.47674 20.2359C3.13518 20.5263 2.69485 20.6662 2.25248 20.6248C1.81011 20.5835 1.40187 20.3643 1.11745 20.0155C0.83303 19.6667 0.695682 19.2166 0.735582 18.7643C0.775481 18.312 0.989365 17.8944 1.33025 17.6032L9.83772 10.3558Z" fill="#112E49"/>
+                        </svg>
+            .islider__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+
 mixin tariffAction(title,style)
     div(style=style).itsaction
         .itsaction__action Акция
@@ -44,3 +66,35 @@ mixin tariff(obj)
         if obj.note
           .itariff__note= obj.note
         a(href='#').itariff__btn.btn.jsRequest Подключить
+
+mixin feed
+    .ifeed
+        .container
+            .row
+                form(action='ajax.php' method='POST').ifeed__form.form
+                    h2.form__title Оставить заявку
+                    .form__sub Оставьте свои данные и наш специалист свяжется с вами в ближайшее время
+                    .form__error Заполните пожалуйста обязательные поля
+                    .form__fields
+                        .form__field
+                            input(type='text' name='ifeedName' placeholder='Как Вас зовут?').input
+                        .form__field
+                            input(type='tel' name='ifeedTel' placeholder='+7 (___) ___-__-__').input
+                        .form__field
+                            input(type='email' name='ifeedEmail' placeholder='Эл. почта').input
+                        .form__field
+                            input(type='text' name='ifeedAddr' placeholder='Укажите свой адрес').input
+                    .form__accept
+                        label.accept
+                            input(type='checkbox' name='ifeedAccept' checked=true).accept__input
+                            span.accept__fake
+                                span.accept__check.
+                                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                                    </svg>
+                                span.accept__txt Я согласен (а) с политикой конфиденциальности
+                    button(type='submit').form__submit.btn2.ifeed__btn
+                        span.btn2__layer
+                        span.btn2__txt Отправить
+                    input(type='hidden' name='action' value='ifeed')
+

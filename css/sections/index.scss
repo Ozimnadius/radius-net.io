@@ -16,20 +16,55 @@
     padding-bottom: 30px;
   }
 
+  &_tabs{
+    padding-bottom: 0;
+  }
+
+  &__top{
+    text-align: center;
+
+    &-row{
+      @include row-flex;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 160px;
+      @include lg-block{
+        margin-bottom: 120px;
+      }
+      @include sm-block{
+        margin-bottom: 100px;
+      }
+    }
+
+    &-left{
+      @include col;
+      @include size(10);
+      @include size-lg(12);
+      @include size-sm(24);
+      @include sm-block{
+        text-align: center;
+        margin-bottom: 25px;
+      }
+    }
+
+    &-right{
+      @include col;
+      @include size(14);
+      @include size-lg(12);
+      @include size-sm(24);
+    }
+  }
+
   &__title {
     color: $text;
-    text-align: center;
     font-size: 50px;
     @include demi;
     line-height: lh(50, 51.85);
-    margin-bottom: 30px;
     @include lg-block {
       font-size: 35px;
-      margin-bottom: 25px;
     }
     @include sm-block{
       font-size: 24px;
-      margin-bottom: 10px;
     }
 
     &_y {
@@ -38,20 +73,33 @@
       -webkit-text-fill-color: transparent;
       color: $y;
     }
+
+    &_s{
+      font-size: 40px;
+
+      @include lg-block {
+        font-size: 28px;
+      }
+      @include sm-block{
+        font-size: 20px;
+      }
+    }
   }
 
   &__sub {
     font-size: 20px;
     color: $grey2;
-    text-align: center;
     margin-bottom: 55px;
+    margin-top: 30px;
     @include lg-block {
       font-size: 18px;
       margin-bottom: 35px;
+      margin-top: 25px;
     }
     @include sm-block{
       font-size: 16px;
       margin-bottom: 30px;
+      margin-top: 10px;
     }
 
     a {
@@ -64,6 +112,14 @@
       }
     }
 
+  }
+
+  &__txt{
+
+  }
+
+  &__tabs{
+    border-top: 1px solid $grey6;
   }
 
   &__row {
@@ -991,6 +1047,96 @@
     }
     @include sm-block{
       font-size: 16px;
+    }
+  }
+
+}
+
+.itabs{
+  position: relative;
+
+  &__sws{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    @include sm-block{
+        justify-content: space-between;
+    }
+  }
+
+  &__sw{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 40px;
+    margin-right: 20px;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid $grey6;
+    background-color: $grey5;
+    font-size: 20px;
+    @include demi;
+    @include tr;
+    @include sm-block{
+      margin-right: 0;
+      width: calc(100%/3 - 10px);
+      height: 47px;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.active{
+      height: 77px;
+      background-color: $bg;
+      border-bottom-color: $bg;
+      @include sm-block{
+        height: 47px;
+      }
+    }
+
+  }
+
+  &__title{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    @include lg-block{
+      display: none;
+    }
+
+    &-txt{
+      color: $grey2;
+      margin-left: 20px;
+    }
+  }
+
+  &__tab{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 75px 0;
+    opacity: 0;
+    @include lg-block{
+      padding: 50px 0;
+    }
+    @include sm-block{
+      padding: 35px 0;
+    }
+
+    &.active{
+      position: relative;
+      z-index: 10;
+      opacity: 1;
     }
   }
 

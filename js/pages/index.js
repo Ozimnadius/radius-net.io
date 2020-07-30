@@ -7,6 +7,21 @@ $(function () {
 
 
     //EVENTS
+    $('.itabs__sw').on('click', function (e) {
+        e.preventDefault();
+
+        let $this = $(this),
+            id = $this.data('id'),
+            sws = $('.itabs__sw').not($this),
+            tab = $('.itabs__tab[data-id="'+id+'"]'),
+            tabs = $('.itabs__tab').not(tab);
+
+        sws.removeClass('active');
+        $this.addClass('active');
+        tabs.removeClass('active');
+        tab.addClass('active');
+
+    });
 
     //FUNCTIONS
     $('.itariff__circle').each(function (x, i) {

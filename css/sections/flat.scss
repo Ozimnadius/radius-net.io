@@ -1,0 +1,356 @@
+.flat {
+
+}
+
+.fdops {
+  border-top: 1px solid $grey6;
+  padding: 60px 0;
+  @include sm-block{
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-size: 50px;
+    text-align: center;
+    @include demi;
+    margin-bottom: 50px;
+    @include lg-block{
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+    @include sm-block{
+      font-size: 24px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 35px;
+    @include lg-block{
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    @include col;
+    @include size(6);
+    margin-bottom: 20px;
+    @include size-sm(12);
+  }
+
+  &__note {
+    max-width: 822px;
+    text-align: center;
+    color: $grey2;
+    margin: 0 auto;
+  }
+
+}
+
+.fdop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__img {
+    margin-bottom: 5px;
+    @include lg-block{
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    max-width: 280px;
+    @include lg-block{
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__sub {
+    color: $grey2;
+    font-size: 16px;
+    margin-bottom: 5px;
+    max-width: 280px;
+    @include lg-block{
+      font-size: 12px;
+    }
+  }
+
+  &__price {
+    font-size: 24px;
+    @include demi;
+    margin-top: auto;
+    margin-bottom: 20px;
+    @include lg-block{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+
+}
+
+.fconnect {
+  background: $menu url("../images/content/connect/bg.jpg") 0 0 no-repeat;
+  background-size: cover;
+  padding-top: 120px;
+  padding-bottom: 200px;
+  @include lg-block{
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+  @include sm-block{
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  &__top{
+    margin-bottom: 110px;
+    @include lg-block{
+      margin-bottom: 60px;
+    }
+    @include sm-block{
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.fcities {
+
+  &__row{
+    align-items: center;
+    margin-bottom: 50px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
+  }
+
+  &__left {
+    @include col;
+    @include size(10);
+    @include size-lg(12);
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 30px;
+    }
+  }
+
+  &__right {
+    @include col;
+    @include size(14);
+    @include size-lg(12);
+    @include size-sm(24);
+  }
+
+  &__title{
+    color: $bg;
+    font-size: 60px;
+    @include demi;
+    line-height: 103.7%;
+    @include lg-block{
+      font-size: 35px;
+    }
+    @include sm-block{
+      font-size: 24px;
+      text-align: center;
+    }
+
+    &_s{
+      font-size: 40px;
+      @include lg-block{
+        font-size: 24px;
+      }
+      @include sm-block{
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__txt{
+    color: $bg;
+    font-size: 20px;
+    @include lg-block{
+      font-size: 16px;
+    }
+    .y{
+      font-weight: 900;
+    }
+  }
+
+  &__list{
+    border-radius: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(#070d21,.5);
+    padding: 50px 50px 30px 50px;
+    @include row-flex;
+    @include lg-block{
+      padding: 40px 40px 20px 40px;
+    }
+    @include sm-block{
+      padding: 25px;
+    }
+  }
+
+  &__item{
+    @include col;
+    @include size(4);
+    margin-bottom: 20px;
+    color: rgba($bg,.5);
+    font-size: 16px;
+    @include size-lg(6);
+    @include size-sm(12);
+    @include sm-block{
+      font-size: 14px;
+    }
+  }
+
+}
+
+.fstreets {
+
+  &__title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 103.7%;
+    margin-bottom: 60px;
+    @include lg-block{
+      font-size: 35px;
+    }
+    @include sm-block{
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__left{
+    @include col;
+    @include size(18);
+    @include size-lg(24);
+    @include lg-block{
+      margin-bottom: 70px;
+    }
+    @include sm-block{
+      margin-bottom: 20px;
+    }
+  }
+
+  &__right{
+    @include col;
+    @include size(6);
+    @include size-lg(18);
+    @include shift-lg(3);
+    @include size-sm(24);
+    @include shift-sm(0);
+  }
+
+  &__col{
+    @include col;
+    @include size(8);
+    @include size-sm(12);
+    @include sm-block{
+      margin-bottom: 40px;
+    }
+  }
+
+  &__city{
+    color: $bg;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    @include lg-block{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    @include sm-block{
+      font-size: 18px;
+    }
+  }
+
+  &__item{
+    color:$bg;
+    font-size: 20px;
+    font-weight: 300;
+    //line-height: 103.7%;
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    @include lg-block{
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list{
+    margin-bottom: 40px;
+  }
+
+  &__link{
+    color: $bg;
+    font-size: 20px;
+    text-decoration: underline;
+    @include tr;
+    @include lg-block{
+      font-size: 16px;
+    }
+
+    &:hover{
+      color: $y;
+    }
+  }
+
+  &__block{
+    border-radius: 20px;
+    background-color: #08142f;
+    padding: 25px 20px;
+    @include lg-block{
+      padding: 40px;
+      text-align: center;
+    }
+    @include sm-block{
+      padding: 35px 30px;
+      text-align: left;
+    }
+
+    &-title{
+      color: $bg;
+      font-size: 35px;
+      font-weight: 500;
+      line-height: 100%;
+      margin-bottom: 15px;
+      @include lg-block{
+        margin-bottom: 25px;
+      }
+      @include sm-block{
+        font-size: 24px;
+      }
+      br{
+        @include lg-block{
+          display: none;
+        }
+      }
+    }
+
+    &-txt{
+      color: $bg;
+      font-weight: 300;
+      line-height: 103.7%;
+      margin-bottom: 20px;
+    }
+
+    &-btn{
+      color: $bg;
+      font-size: 16px;
+      text-decoration: underline;
+      @include tr;
+      &:hover{
+        color: $y;
+      }
+    }
+  }
+
+
+}

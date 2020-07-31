@@ -1,0 +1,56 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+    - var banner = {enable: true, bread: true};
+    - var feed = true;
+
+block content
+    main.equip
+        each i,x in equip
+            section.equip__section
+                .container
+                    .row.equip__row
+                        .equip__left
+                            picture
+                                source(srcset='images/content/equip/'+(x+1)+'.png' type='image/jpeg' media='(min-width:768px)')
+                                source(srcset='images/content/equip/m'+(x+1)+'.png' type='image/jpeg' media='(min-width:320px)')
+                                img(src='images/content/equip/'+(x+1)+'.png' alt=i.title).equip__img
+                        .equip__right
+                            h2.equip__title= i.title
+                            .equip__txt!= i.txt
+                            .equip__bottom
+                                if i.price
+                                    .equip__price
+                                        | Покупка:&nbsp;
+                                        span.y= i.price
+                                if i.time
+                                    .equip__time
+                                        | Рассрочка (12 месяцев):&nbsp;
+                                        span.y= i.time
+                                if i.note
+                                    .equip__note= i.note
+                                if i.rent
+                                    .equip__rent
+                                        | Аренда:&nbsp;
+                                        span.y= i.rent
+                            a(href='/').equip__link.btn5 Подробнее
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

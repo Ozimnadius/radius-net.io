@@ -8,6 +8,30 @@
     margin-top: 15px;
   }
 
+  &_second{
+    //position: static;
+    @include sm-block{
+      margin-top: 0;
+    }
+    .header{
+      &__top{
+        margin-bottom: 0;
+        @include sm-block{
+          top: 13px;
+        }
+      }
+
+      &__bottom{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include lg-block{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
   &__top {
     background-color: $text;
     margin-bottom: 20px;

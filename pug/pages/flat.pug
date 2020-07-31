@@ -97,67 +97,10 @@ block content
             +isliderSimple('background-color: #f6f6f6;')
         //- dops
         section.flat__dops
-            .fdops
-                .container
-                    h2.fdops__title Дополнительные услуги
-                    .row.fdops__list
-                        each i in fdops
-                            .fdops__item.fdop
-                                .fdop__img
-                                    +image(i.img,'fdop__img-img')
-                                .fdop__title!= i.title
-                                if i.sub
-                                    .fdop__sub= i.sub
-                                .fdop__price= i.price
-                                a(href='#').fdop__btn.jsCall.btn5 Закзать
-                    .fdops__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+            +fdops
         //- connect
         section.flat__connect
-            .fconnect
-                .container
-                    .fconnect__top
-                        .fcities
-                            .row.fcities__row
-                                .fcities__left
-                                    h3.fcities__title
-                                        | Где подключаем?
-                                        br
-                                        span.gr.fcities__title_s Список частных секторов
-                                .fcities__right
-                                    .fcities__txt
-                                        | Мы подключаем интернет&nbsp;
-                                        span.y в частном секторе Улан-Удэ&nbsp;
-                                        | и близлежащих районах. Если ваш дом не входит в область покрытия сети, позвоните нам, оставьте заявку и возможно мы вам сможем помочь
-
-                            .fcities__list
-                                each i in fcities
-                                    .fcities__item= i
-
-                    .fconnect__bottom
-                        .fstreets
-                            h3.fstreets__title.gr
-                                |Список подключенных
-                                br
-                                |многоквартирных домов
-                            .row
-                                .fstreets__left
-                                    .row
-                                        each col in fstreets
-                                            .fstreets__col
-                                                .fstreets__city= col.city
-                                                .fstreets__list
-                                                    each i in col.list
-                                                        .fstreets__item= i
-                                                a(href=col.link).fstreets__link Смотреть весь список
-
-                                .fstreets__right
-                                    .fstreets__block
-                                        .fstreets__block-title
-                                            | Не нашли&nbsp;
-                                            br
-                                            span.y свой дом?
-                                        .fstreets__block-txt Если вашего дома не оказалось в списке обратитесь к нашим специалистам, чтобы получить консультацию
-                                        a(href='#').fstreets__block-btn Связяться со специалистом
+            +connect
 
 
 

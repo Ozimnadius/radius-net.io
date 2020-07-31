@@ -18,6 +18,38 @@ mixin image(imagePath, imageClass, imageAlt)
 
     img(src=`${imagePath}`, alt=`${alt}`, class=`${cls}`)
 
+mixin isliderMain(style)
+    div(style=style).islider
+        .container
+            .islider__top
+                .islider__top-row
+                    .islider__top-left
+                        h2.islider__title
+                            | Тарифные планы
+                            br
+                            span.islider__title_y.islider__title_s Для частных домов
+                    .islider__top-right
+                        .islider__txt Мы предлагаем качественное выполнение установки интернет-сети и подключения телевидения в частный дом. По Вашему запросу наши квалифицированные менеджеры подберут оптимальный тариф, подходящий для Ваших потребностей.
+            .islider__bottom
+                .row.islider__row
+                    .islider__left
+                        +tariffAction('Тарифные планы с промо-периодом <b>до 3 месяцев*</b>','background-color: #112643')
+                    .islider__right
+                        div(data-id=11).islider__slider.swiper-container
+                            .swiper-wrapper
+                                each i in tariffList
+                                    .swiper-slide.islider__slide
+                                        +tariff(i)
+                        a(href='#' data-id=11).islider__arr.islider__prev
+                            <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.16228 10.6442L13.6698 17.8918C14.0093 18.1834 14.222 18.6007 14.2613 19.0523C14.3006 19.5039 14.1632 19.953 13.8792 20.3012C13.5953 20.6495 13.1879 20.8685 12.7463 20.9104C12.3048 20.9522 11.865 20.8134 11.5233 20.5245L1.47135 11.9606C1.28287 11.7996 1.13126 11.5983 1.02722 11.3708C0.923186 11.1434 0.869264 10.8953 0.869264 10.6443C0.869265 10.3932 0.923186 10.1451 1.02722 9.91767C1.13126 9.69021 1.28287 9.48888 1.47135 9.32789L11.5233 0.764067C11.8648 0.473705 12.3052 0.333828 12.7475 0.375162C13.1899 0.416495 13.5981 0.635655 13.8826 0.984503C14.167 1.33335 14.3043 1.78335 14.2644 2.23566C14.2245 2.68797 14.0106 3.10559 13.6698 3.39679L5.16228 10.6442Z" fill="#112E49"/>
+                            </svg>
+                        a(href='#' data-id=11).islider__arr.islider__next
+                            <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.83772 10.3558L1.33024 3.10822C0.990672 2.81662 0.777965 2.39933 0.738703 1.94773C0.699442 1.49614 0.836825 1.04703 1.12077 0.698774C1.40471 0.350515 1.81208 0.131482 2.25365 0.0896406C2.69523 0.0477988 3.13503 0.186558 3.47674 0.475533L13.5287 9.03939C13.7171 9.20038 13.8687 9.40171 13.9728 9.62917C14.0768 9.85662 14.1307 10.1047 14.1307 10.3557C14.1307 10.6068 14.0768 10.8549 13.9728 11.0823C13.8687 11.3098 13.7171 11.5111 13.5287 11.6721L3.47674 20.2359C3.13518 20.5263 2.69485 20.6662 2.25248 20.6248C1.81011 20.5835 1.40187 20.3643 1.11745 20.0155C0.83303 19.6667 0.695682 19.2166 0.735582 18.7643C0.775481 18.312 0.989365 17.8944 1.33025 17.6032L9.83772 10.3558Z" fill="#112E49"/>
+                            </svg>
+                .islider__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+
 mixin isliderSimple(style)
     div(style=style).islider
         .container
@@ -64,7 +96,7 @@ mixin tariff(obj)
                 .itariff__info-bottom= obj.info.bottom
         .itariff__price= obj.price
         if obj.note
-          .itariff__note= obj.note
+            .itariff__note= obj.note
         a(href='#').itariff__btn.btn.jsRequest Подключить
 
 mixin feed
@@ -97,4 +129,101 @@ mixin feed
                         span.btn2__layer
                         span.btn2__txt Отправить
                     input(type='hidden' name='action' value='ifeed')
+
+mixin fdops()
+    .fdops
+        .container
+            h2.fdops__title Дополнительные услуги
+            .row.fdops__list
+                each i in fdops
+                    .fdops__item.fdop
+                        .fdop__img
+                            +image(i.img,'fdop__img-img')
+                        .fdop__title!= i.title
+                        if i.sub
+                            .fdop__sub= i.sub
+                        .fdop__price= i.price
+                        a(href='#').fdop__btn.jsCall.btn5 Закзать
+            .fdops__note *Для всех тарифных планов ежемесячный трафик не ограничен. Предоставление услуги осуществляется только при положительном балансе. Абонентская плата снимается посуточно равными долями т.е. цена услуги делится на количество дней в месяце на момент списания и эта сумма списывается ежедневно.
+
+mixin connect(map)
+    .fconnect
+        .container
+            .fconnect__top
+                .fcities
+                    .row.fcities__row
+                        .fcities__left
+                            h3.fcities__title
+                                | Где подключаем?
+                                br
+                                span.gr.fcities__title_s Список частных секторов
+                        .fcities__right
+                            .fcities__txt
+                                | Мы подключаем интернет&nbsp;
+                                span.y в частном секторе Улан-Удэ&nbsp;
+                                | и близлежащих районах. Если ваш дом не входит в область покрытия сети, позвоните нам, оставьте заявку и возможно мы вам сможем помочь
+
+                    .fcities__list
+                        each i in fcities
+                            .fcities__item= i
+
+            .fconnect__bottom
+                if map
+                    .fmap
+                        .fmap__title.gr Карта покрытия сети
+                        .fmap__map.
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A50f0aeaa34dd60eae5724fc6802abd87f07d691bfa5188f83c597fcad77b4de7&amp;source=constructor" width="100%" height="600" frameborder="0"></iframe>
+                else
+                    .fstreets
+                        h3.fstreets__title.gr
+                            | Список подключенных
+                            br
+                            | многоквартирных домов
+                        .row
+                            .fstreets__left
+                                .row
+                                    each col in fstreets
+                                        .fstreets__col
+                                            .fstreets__city= col.city
+                                            .fstreets__list
+                                                each i in col.list
+                                                    .fstreets__item= i
+                                            a(href=col.link).fstreets__link Смотреть весь список
+
+                            .fstreets__right
+                                .fstreets__block
+                                    .fstreets__block-title
+                                        | Не нашли&nbsp;
+                                        br
+                                        span.y свой дом?
+                                    .fstreets__block-txt Если вашего дома не оказалось в списке обратитесь к нашим специалистам, чтобы получить консультацию
+                                    a(href='#').fstreets__block-btn.jsCall Связяться со специалистом
+
+mixin pack(i)
+    div(style=i.style class=i.cls data-id=i.id).ipack.jsOpenPacks
+        .ipack__title!= i.title
+        a(href='#').ipack__link
+            span.ipack__link-price= i.price
+            span.ipack__link-link= i.link
+        if i.sub
+            .ipack__sub= i.sub
+        a(href='#').ipack__btn.btn4.jsRequest
+            span.btn4__layer
+            span.btn4__txt Подключить
+
+mixin idopsRow()
+    .row
+        each i in dops
+            .idops__item
+                div(data-id=i.id).idop.jsOpenPacks
+                    .idop__top
+                        +image(i.src,'idop__img')
+                    .idop__bottom
+                        .idop__title= i.title
+                        a(href='#').idop__link
+                            span.idop__link-price 380 руб/мес
+                            span.idop__link-link +5 каналов
+                        a(href='#').idop__btn.btn4.jsRequest
+                            span.btn4__layer
+                            span.btn4__txt Подключить
 

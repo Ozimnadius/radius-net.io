@@ -1,0 +1,36 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+    - var banner = {enable: true, bread: true};
+    - var feed = true;
+
+block content
+    main.flat
+        //- tariffs
+        section.flat__slider
+           +isliderMain
+        //- slider
+        section.flat__slider
+            +isliderSimple('background-color: #f6f6f6;')
+        //- dops
+        section.flat__dops
+            +fdops
+        //- connect
+        section.flat__connect
+            +connect(true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

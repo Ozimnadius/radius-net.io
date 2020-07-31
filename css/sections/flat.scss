@@ -5,7 +5,7 @@
 .fdops {
   border-top: 1px solid $grey6;
   padding: 60px 0;
-  @include sm-block{
+  @include sm-block {
     padding: 50px 0;
   }
 
@@ -14,18 +14,18 @@
     text-align: center;
     @include demi;
     margin-bottom: 50px;
-    @include lg-block{
+    @include lg-block {
       font-size: 35px;
       margin-bottom: 20px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 24px;
     }
   }
 
   &__list {
     margin-bottom: 35px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 20px;
     }
   }
@@ -54,7 +54,7 @@
 
   &__img {
     margin-bottom: 5px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 0;
     }
   }
@@ -63,7 +63,7 @@
     font-size: 20px;
     margin-bottom: 10px;
     max-width: 280px;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
       margin-bottom: 5px;
     }
@@ -74,7 +74,7 @@
     font-size: 16px;
     margin-bottom: 5px;
     max-width: 280px;
-    @include lg-block{
+    @include lg-block {
       font-size: 12px;
     }
   }
@@ -84,7 +84,7 @@
     @include demi;
     margin-top: auto;
     margin-bottom: 20px;
-    @include lg-block{
+    @include lg-block {
       font-size: 18px;
       margin-bottom: 10px;
     }
@@ -96,22 +96,22 @@
   background: $menu url("../images/content/connect/bg.jpg") 0 0 no-repeat;
   background-size: cover;
   padding-top: 120px;
-  padding-bottom: 200px;
-  @include lg-block{
+  padding-bottom: 100px;
+  @include lg-block {
     padding-top: 60px;
     padding-bottom: 100px;
   }
-  @include sm-block{
+  @include sm-block {
     padding-top: 40px;
     padding-bottom: 80px;
   }
 
-  &__top{
+  &__top {
     margin-bottom: 110px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 60px;
     }
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 40px;
     }
   }
@@ -119,10 +119,10 @@
 
 .fcities {
 
-  &__row{
+  &__row {
     align-items: center;
     margin-bottom: 50px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 30px;
     }
   }
@@ -132,7 +132,7 @@
     @include size(10);
     @include size-lg(12);
     @include size-sm(24);
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 30px;
     }
   }
@@ -144,64 +144,65 @@
     @include size-sm(24);
   }
 
-  &__title{
+  &__title {
     color: $bg;
     font-size: 60px;
     @include demi;
     line-height: 103.7%;
-    @include lg-block{
+    @include lg-block {
       font-size: 35px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 24px;
       text-align: center;
     }
 
-    &_s{
+    &_s {
       font-size: 40px;
-      @include lg-block{
+      @include lg-block {
         font-size: 24px;
       }
-      @include sm-block{
+      @include sm-block {
         font-size: 18px;
       }
     }
   }
 
-  &__txt{
+  &__txt {
     color: $bg;
     font-size: 20px;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
     }
-    .y{
+
+    .y {
       font-weight: 900;
     }
   }
 
-  &__list{
+  &__list {
     border-radius: 20px;
     border: 4px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(#070d21,.5);
+    background-color: rgba(#070d21, .5);
     padding: 50px 50px 30px 50px;
     @include row-flex;
-    @include lg-block{
+    @include lg-block {
       padding: 40px 40px 20px 40px;
     }
-    @include sm-block{
+    @include sm-block {
       padding: 25px;
     }
   }
 
-  &__item{
+  &__item {
     @include col;
     @include size(4);
     margin-bottom: 20px;
-    color: rgba($bg,.5);
+    color: rgba($bg, .5);
     font-size: 16px;
     @include size-lg(6);
     @include size-sm(12);
-    @include sm-block{
+    @include sm-block {
       font-size: 14px;
     }
   }
@@ -209,35 +210,39 @@
 }
 
 .fstreets {
+  margin-bottom: 100px;
+  @include lg-block {
+    margin-bottom: 0;
+  }
 
-  &__title{
+  &__title {
     text-align: center;
     font-size: 40px;
     font-weight: 500;
     line-height: 103.7%;
     margin-bottom: 60px;
-    @include lg-block{
+    @include lg-block {
       font-size: 35px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 24px;
       margin-bottom: 40px;
     }
   }
 
-  &__left{
+  &__left {
     @include col;
     @include size(18);
     @include size-lg(24);
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 70px;
     }
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 20px;
     }
   }
 
-  &__right{
+  &__right {
     @include col;
     @include size(6);
     @include size-lg(18);
@@ -246,107 +251,112 @@
     @include shift-sm(0);
   }
 
-  &__col{
+  &__col {
     @include col;
     @include size(8);
     @include size-sm(12);
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 40px;
+      text-align: center;
     }
   }
 
-  &__city{
+  &__city {
     color: $bg;
     font-size: 40px;
     font-weight: 500;
     margin-bottom: 35px;
-    @include lg-block{
+    @include lg-block {
       font-size: 24px;
       margin-bottom: 20px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 18px;
     }
   }
 
-  &__item{
-    color:$bg;
+  &__item {
+    color: $bg;
     font-size: 20px;
     font-weight: 300;
     //line-height: 103.7%;
     margin-bottom: 15px;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
-    @include lg-block{
+
+    @include lg-block {
       font-size: 16px;
       margin-bottom: 20px;
     }
   }
 
-  &__list{
+  &__list {
     margin-bottom: 40px;
   }
 
-  &__link{
+  &__link {
     color: $bg;
     font-size: 20px;
     text-decoration: underline;
     @include tr;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
     }
 
-    &:hover{
+    &:hover {
       color: $y;
     }
   }
 
-  &__block{
+  &__block {
     border-radius: 20px;
     background-color: #08142f;
     padding: 25px 20px;
-    @include lg-block{
+    @include lg-block {
       padding: 40px;
       text-align: center;
     }
-    @include sm-block{
+    @include sm-block {
       padding: 35px 30px;
       text-align: left;
     }
 
-    &-title{
+    &-title {
       color: $bg;
       font-size: 35px;
       font-weight: 500;
       line-height: 100%;
       margin-bottom: 15px;
-      @include lg-block{
+      @include lg-block {
         margin-bottom: 25px;
       }
-      @include sm-block{
+      @include sm-block {
         font-size: 24px;
       }
-      br{
-        @include lg-block{
+
+      br {
+        @include lg-block {
           display: none;
         }
       }
     }
 
-    &-txt{
+    &-txt {
       color: $bg;
       font-weight: 300;
       line-height: 103.7%;
       margin-bottom: 20px;
     }
 
-    &-btn{
+    &-btn {
       color: $bg;
       font-size: 16px;
       text-decoration: underline;
       @include tr;
-      &:hover{
+
+      &:hover {
         color: $y;
       }
     }
@@ -354,3 +364,45 @@
 
 
 }
+
+.fmap {
+
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 103.7%;
+    margin-bottom: 45px;
+    @include lg-block {
+      font-size: 35px;
+      margin-bottom: 35px;
+    }
+    @include sm-block {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 635px;
+    border-radius: 20px;
+    border: 15px solid #1f4485;
+    overflow: hidden;
+    @include lg-block {
+      height: 390px;
+      border-width: 9px;
+    }
+    @include sm-block{
+      height: 275px;
+      border-width: 6px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+

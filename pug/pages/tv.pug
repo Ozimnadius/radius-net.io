@@ -1,0 +1,68 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+    - var banner = {enable: true, bread: true};
+    - var feed = true;
+
+block content
+    main.tv
+        //- advs
+        section.tv__advantages
+            .tvadvs
+                .container
+                    h2.tvadvs__title Преимущества
+                    .row.tvadvs__row
+                        each i in tvadvs
+                            .tvadvs__item.tvadv
+                                .tvadv__left
+                                    +image(i.img,'tvadv__img')
+                                .tvadv__right
+                                    .tvadv__title!= i.title
+                                    .tvadv__txt= i.txt
+        //- packs
+        section.tv__packs
+            .tvpacks
+                .container
+                    .tvpacks__top
+                        h2.tvpacks__title
+                            | Выбери&nbsp;
+                            span.gr свой пакет
+                            br
+                            | интерактивного ТВ
+                        .tvpacks__txt Мы предлагаем качественное выполнение установки интернет-сети и подключения телевидения в частный дом. По Вашему запросу наши квалифицированные менеджеры подберут оптимальный тариф, подходящий для Ваших потребностей.
+                    .tvpacks__bottom
+                        .row.tvpacks__row
+                            each i in tvpacks
+                                .tvpacks__item
+                                    +pack(i)
+                        .tvpacks__note *Абонентская плата снимается ежедневно, пропорционально количеству дней в месяце.
+        //- dops
+        section.tv__dops
+            .tvdops
+                .container
+                    .tvdops__top
+                        h2.tvdops__title
+                            span.gr Дополнительные &nbsp;
+                            br
+                            | пакеты телеканалов
+                        .tvdops__txt Мы предлагаем качественное выполнение установки интернет-сети и подключения телевидения в частный дом. По Вашему запросу наши квалифицированные менеджеры подберут оптимальный тариф, подходящий для Ваших потребностей.
+                    .tvdops__bottom
+                        +idopsRow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

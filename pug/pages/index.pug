@@ -92,16 +92,7 @@ block content
                     .row
                         each i in packs
                             .ipacks__item
-                                div(class=i.cls data-id=i.id).ipack.jsOpenPacks
-                                    .ipack__title!= i.title
-                                    a(href='#').ipack__link
-                                        span.ipack__link-price= i.price
-                                        span.ipack__link-link= i.link
-                                    if i.sub
-                                        .ipack__sub= i.sub
-                                    a(href='#').ipack__btn.btn4.jsRequest
-                                        span.btn4__layer
-                                        span.btn4__txt Подключить
+                                +pack(i)
         //- dops
         section.index__dops
             .idops
@@ -109,20 +100,8 @@ block content
                     h2.idops__title
                         span.gr Дополнительные&nbsp;
                         | пакеты телеканалов
-                    .row
-                        each i in dops
-                            .idops__item
-                                div(data-id=i.id).idop.jsOpenPacks
-                                    .idop__top
-                                        +image(i.src,'idop__img')
-                                    .idop__bottom
-                                        .idop__title= i.title
-                                        a(href='#').idop__link
-                                            span.idop__link-price 380 руб/мес
-                                            span.idop__link-link +5 каналов
-                                        a(href='#').idop__btn.btn4.jsRequest
-                                            span.btn4__layer
-                                            span.btn4__txt Подключить
+
+                    +idopsRow
         //- feed
         section.index__feed
             +feed()

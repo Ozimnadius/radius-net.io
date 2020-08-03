@@ -31,6 +31,7 @@ const vendorJs = [
     'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
     'node_modules/swiper/js/swiper.js',
     'node_modules/jquery-validation/dist/jquery.validate.js',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 ];
 
 
@@ -38,6 +39,7 @@ const vendorCss = [
     'node_modules/font-awesome/css/font-awesome.css',
     'node_modules/normalize.css/normalize.css',
     'node_modules/swiper/css/swiper.css',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
 ];
 
 

@@ -29,6 +29,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 function imageResize(src) {
     $('img').not('.logo__img').attr('src', src);
 }
+
 // imageResize('https://loremflickr.com/320/440');
 
 const wWidth = $(window).width();
@@ -42,6 +43,7 @@ function getSuccess() {
 $.validator.methods.tel = function (value, element) {
     return validateTel(value);
 };
+
 function validateTel(value) {
     let re = new RegExp(/\d/g),
         str = value.match(re);
@@ -73,4 +75,51 @@ function openForm(form) {
 function closePopup() {
     popup.removeClass('active');
     $('body').removeClass('ovh');
+}
+
+
+if (wWidth < 700) {
+    $('table').each(function (x, i) {
+        let $table = $(i),
+            $th = $table.find('thead').find('th'),
+            $tr = $table.find('tbody').find('tr');
+
+        $table.html(getTable($tr, $th));
+    });
+}
+
+function getTable($tr, $th) {
+    let tbody = $('<tbody>');
+
+    $tr.each(function (x, i) {
+        let cls = '';
+        if ((x+1)%2 == 1){
+            cls = 'grey';
+        }
+        tbody.append(getTrs($(i), $th,cls));
+    });
+
+
+    return tbody;
+}
+
+function getTrs(tr, $th,cls) {
+    let trArr = [],
+        tds = tr.find('td'),
+        leng = tds.length;
+
+    tds.each(function (x, i) {
+
+        let newTr = $('<tr>').addClass(cls),
+            td = $(i);
+
+        if (x == 0){
+            newTr.addClass('first');
+        }
+        newTr.append($('<td>').html($($th[x]).html()));
+        newTr.append(td);
+        trArr.push(newTr);
+    });
+
+    return trArr;
 }

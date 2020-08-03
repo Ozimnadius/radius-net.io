@@ -44,7 +44,7 @@ body {
   &__bread{
     padding: 40px 0;
     @include lg-block{
-      padding-top: 0;
+      padding-top: 30px;
       padding-bottom: 30px;
     }
     @include sm-block{

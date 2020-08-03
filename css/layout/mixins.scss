@@ -140,22 +140,85 @@ $vh: 1080;
     margin-bottom: 40px;
     width: 100%;
     border-collapse: collapse;
+    font-size: 16px;
+    @include lg-block{
+      font-size: 14px;
+    }
+
 
     tr{
+      &:nth-child(odd){
+        background-color: $grey4;
+
+        @include sm-block{
+          background-color: $bg;
+        }
+
+      }
       &:nth-child(even){
+        background-color: $bg;
+      }
+
+      &.grey{
         background-color: $grey4;
       }
+
+      &.first{
+        background-color: $text;
+        color: $bg;
+      }
+
     }
 
     th{
       color: $bg;
       background-color: $text;
+      font-weight: 500;
+      text-align: left;
+      padding: 15px 20px;
+
     }
 
     td {
       border: none;
-      padding: 15px 25px;
-      font-size: 16px;
+      padding: 15px 20px;
+      font-weight: 500;
+      @include sm-block{
+        padding: 13px 10px;
+      }
+    }
+  }
+
+  button {
+    margin: 40px auto;
+    width: 237px;
+    height: 50px;
+    border-radius: 1000px;
+    border: 1px solid $y;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $y;
+    font-size: 16px;
+    font-weight: 500;
+    @include lg-block{
+      margin: 30px auto;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    @include tr;
+    @include lg-block{
+      width: 195px;
+      height: 46px;
+      font-size: 14px;
+    }
+
+    &:hover{
+      background-color: $y;
+      color: $bg;
     }
   }
 

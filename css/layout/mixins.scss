@@ -53,6 +53,9 @@ $vh: 1080;
     margin: 40px 0 40px 25px;
 
     li {
+      padding-left: 25px;
+      position: relative;
+      margin-bottom: 5px;
       &:before {
         content: '';
         display: inline-block;
@@ -63,19 +66,24 @@ $vh: 1080;
         border-radius: 50%;
         margin-right: 15px;
         line-height: inherit;
-        position: relative;
-        top: -2px;
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+
+      &:last-child{
+        margin-bottom: 0;
       }
 
       ol {
         margin-bottom: 10px;
         margin-top: 10px;
-        counter-reset: li;
+        counter-reset: list;
 
         li {
           &:before {
-            counter-increment: li;
-            content: counters(li, ".") ". ";
+            counter-increment: list;
+            content: counters(list, ".") ". ";
             margin-right: 10px;
             display: inline-block;
             width: auto;
@@ -94,16 +102,25 @@ $vh: 1080;
   }
 
   ol {
-    margin: 40px 0 40px 25px;
+    margin: 40px 0 40px 0px;
     counter-reset: li;
 
     li {
+      padding-left: 25px;
+      position: relative;
+      margin-bottom: 5px;
       &:before {
         color: $blue;
         counter-increment: li;
         content: counters(li, ".") ". ";
         margin-right: 10px;
         display: inline-block;
+        position: absolute;
+        left: 0;
+      }
+
+      &:last-child{
+        margin-bottom: 0;
       }
 
       ul {
@@ -121,6 +138,14 @@ $vh: 1080;
       ol{
         margin-bottom: 10px;
         margin-top: 10px;
+        counter-reset: li2;
+
+        li {
+          &:before {
+            counter-increment: li2;
+            content: counters(li2, ".") ". ";
+          }
+        }
       }
     }
 

@@ -9,7 +9,7 @@ block content
     .news
         .container
             h1.news__title Новости
-            .row
+            .row.news__row
                 main.news__main
                     .news__list
                         each i,x in news
@@ -40,19 +40,7 @@ block content
 
                 aside.news__aside
                     .news__block
-                        .nblock
-                            .nblock__title
-                                | Интернет
-                                br
-                                | для частного дома
-                            .nblock__img
-                                +image('images/content/news/img.png','nblock__img-img')
-                            a(href='#').nblock__btn.btn2
-                                span.btn2__layer
-                                span.btn2__txt Подключить
-
-
-
+                        +nblock
 
 
 

@@ -4,15 +4,29 @@
     padding-bottom: 80px;
   }
 
+  &__row{
+    margin-left: -20px;
+    margin-right: -20px;
+    @include lg-block{
+       @include row-flex;
+    }
+  }
+
   &__main {
-    @include col;
-    @include size(18);
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(75% - 40px);
+    @include lg-block{
+        @include col;
+    }
     @include size-lg(24);
+    @include size-sm(24);
   }
 
   &__aside {
-    @include col;
-    @include size(6);
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(25% - 40px);
     @include lg-block {
       display: none;
     }
@@ -221,6 +235,129 @@
     }
 
 
+  }
+
+}
+
+.new{
+  @include lg-block{
+    padding-bottom: 70px;
+  }
+  @include sm-block{
+    padding-bottom: 60px;
+  }
+
+  &__main{
+    border-radius: 20px;
+    border: 1px solid $grey6;
+    background-color: $grey7;
+    padding: 75px 90px 90px 90px;
+    @include lg-block{
+      padding: 45px 50px 65px 50px;
+    }
+    @include sm-block{
+      border-radius: 10px;
+      padding: 10px;
+      padding-top: 15px;
+      padding-bottom: 35px;
+    }
+  }
+
+  &__date{
+    font-size: 20px;
+    @include demi;
+    margin-bottom: 10px;
+    @include sm-block{
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__title{
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    line-height: 120%;
+    @include lg-block{
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+    @include sm-block{
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__img{
+    margin-bottom: 45px;
+    @include lg-block{
+      margin-bottom: 70px;
+    }
+    @include sm-block{
+      margin-bottom: 35px;
+    }
+
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__content{
+    padding-bottom: 30px;
+    border-bottom: 1px solid $grey6;
+    margin-bottom: 45px;
+    @include lg-block{
+      padding-bottom: 60px;
+      margin-bottom: 55px;
+    }
+    @include sm-block{
+      padding-bottom: 40px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__arr{
+    fill: $text;
+    display: flex;
+    align-items: center;
+    @include tr;
+
+
+    &:hover{
+      color: $y;
+      fill: $y;
+    }
+
+    svg{
+      width: 12px;
+      height: 18px;
+      display: flex;
+      @include sm-block{
+        width: 7px;
+        height: 10px;
+      }
+    }
+
+    &-txt{
+      margin-left: 20px;
+      @include sm-block{
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      &_next{
+        margin-left: 0;
+        margin-right: 20px;
+        @include sm-block{
+          margin-right: 10px;
+        }
+      }
+    }
   }
 
 }

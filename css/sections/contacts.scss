@@ -1,0 +1,152 @@
+.contacts {
+
+  &__title {
+    margin-bottom: 40px;
+    @include lg-block {
+      font-size: 35px;
+    }
+    @include sm-block {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__left {
+    @include col;
+    @include size(14);
+    @include size-lg(24);
+    @include lg-block {
+      margin-bottom: 100px;
+    }
+    @include sm-block {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__right {
+    @include col;
+    @include size(10);
+    @include size-lg(24);
+  }
+
+  &__row {
+    margin-bottom: 60px;
+    @include sm-block {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col {
+    @include col;
+    @include size(12);
+    @include size-sm(24);
+    @include sm-block {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    @include sm-block {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    align-items: flex-start;
+    max-width: 100%;
+    @include lg-block {
+      align-items: center;
+      padding: 50px 25px;
+    }
+    @include sm-block {
+      align-items: flex-start;
+      padding: 40px 25px;
+    }
+  }
+
+  &__fields {
+    @include lg-block {
+      @include row-flex;
+    }
+  }
+
+  &__field {
+    @include lg-block {
+      @include col;
+    }
+    @include size-lg(12);
+    @include size-sm(24);
+  }
+
+  &__btn {
+    margin-left: 0;
+    @include lg-block {
+      margin-left: auto;
+    }
+  }
+
+  &__map {
+    margin-top: 60px;
+    @include lg-block {
+      margin-top: 80px;
+    }
+  }
+
+
+}
+
+.citem {
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__txt {
+    font-size: 20px;
+
+    b {
+      @include demi;
+    }
+  }
+
+  &__socs {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  &__soc {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}
+
+#map {
+  width: 100%;
+  height: 665px;
+  @include lg-block {
+    height: 536px;
+  }
+
+  @include sm-block {
+    height: 368px;
+  }
+}

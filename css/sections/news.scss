@@ -723,7 +723,7 @@
     display: flex;
     align-items: center;
     @include tr;
-    @include size(24);
+    @include size-sm(24);
     @include sm-block{
       margin-bottom: 20px;
     }

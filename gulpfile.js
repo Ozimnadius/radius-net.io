@@ -32,6 +32,7 @@ const vendorJs = [
     'node_modules/swiper/js/swiper.js',
     'node_modules/jquery-validation/dist/jquery.validate.js',
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+    'node_modules/parallax-js/dist/parallax.js',
 ];
 
 

@@ -64,4 +64,13 @@ $(function () {
 
     });
 
+    if (wWidth>750) {
+        let scene = document.querySelector('.ipromo__scene');
+        if (scene) {
+            let parallax = new Parallax(scene, {
+                hoverOnly: true,
+            });
+        }
+    }
+
 });

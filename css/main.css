@@ -2318,7 +2318,9 @@ h6 {
 
 .banner__bread {
   position: absolute;
+  z-index: 100;
   left: 0;
+  right: 0;
   top: 100px;
 }
 
@@ -2560,9 +2562,7 @@ h6 {
   }
 }
 
-.breads {
-  margin-left: -20px;
-  margin-right: -20px;
+.breads__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2571,10 +2571,12 @@ h6 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 @media screen and (max-width: 767.98px) {
-  .breads {
+  .breads__row {
     margin-left: -10px;
     margin-right: -10px;
   }
@@ -3482,6 +3484,38 @@ h6 {
 
 .ipromo__img-img {
   width: 100%;
+}
+
+.ipromo__scene {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 767.98px) {
+  .ipromo__scene {
+    display: none;
+  }
+}
+
+.ipromo__console {
+  width: 16.7vw;
+  position: absolute !important;
+  bottom: 7% !important;
+  left: 15% !important;
+  right: initial !important;
+  top: initial !important;
+}
+
+.ipromo__controller {
+  width: 16.7vw;
+  position: absolute !important;
+  bottom: 17% !important;
+  right: 15% !important;
+  left: initial !important;
+  top: initial !important;
 }
 
 .ipromo__container {
@@ -4397,7 +4431,7 @@ h6 {
 @media screen and (max-width: 767.98px) {
   .itabs__sw {
     margin-right: 0;
-    width: calc(100%/3 - 10px);
+    width: calc(100% / 3 - 10px);
     height: 47px;
     font-size: 14px;
     padding: 5px;

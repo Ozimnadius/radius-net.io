@@ -216,7 +216,7 @@ $(function () {
 
     function init() {
 
-        if ($('#map').length) {
+        if ($('#map').length>0) {
             var center = [51.810079271382726,107.64693324736017];
             // if ($(window).width() < 576) {
             //     center = [55.609501798660396, 37.61325538360591];

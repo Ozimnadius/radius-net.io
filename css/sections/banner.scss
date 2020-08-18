@@ -327,6 +327,7 @@
     }
 
     &-svg{
+      display: block;
       svg{
         display: block;
         @include tr;

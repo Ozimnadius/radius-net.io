@@ -2602,6 +2602,10 @@ h6 {
   border-color: #112e49;
 }
 
+.breads__item-svg {
+  display: block;
+}
+
 .breads__item-svg svg {
   display: block;
   -webkit-transition: .3s;

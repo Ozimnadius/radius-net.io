@@ -342,6 +342,8 @@
 
   &__img {
     margin-bottom: 45px;
+    border-radius: 10px;
+    overflow: hidden;
     @include lg-block {
       margin-bottom: 70px;
     }

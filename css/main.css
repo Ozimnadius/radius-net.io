@@ -6434,6 +6434,8 @@ h6 {
 
 .new__img {
   margin-bottom: 45px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1199.98px) {

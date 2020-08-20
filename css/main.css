@@ -94,6 +94,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .page {
@@ -743,7 +744,7 @@ h6 {
 
 .header {
   position: absolute;
-  z-index: 10;
+  z-index: 110;
   top: 0;
   left: 0;
   right: 0;
@@ -1156,6 +1157,7 @@ h6 {
 .nav__sub {
   display: none;
   position: absolute;
+  z-index: 110;
   top: 100%;
   left: 0;
   min-width: 254px;
@@ -1163,6 +1165,16 @@ h6 {
   border: 1px solid #cccccc;
   background-color: #f6f6f6;
   padding: 5px 20px;
+}
+
+.nav__sub:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 15px;
 }
 
 .nav__subitem {
@@ -1496,6 +1508,48 @@ h6 {
   .popup .form {
     border-radius: 0;
   }
+}
+
+.streets {
+  width: 320px;
+  background: #F6F6F6;
+}
+
+.streets__top {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.streets__title {
+  font-size: 18px;
+  font-family: "Futura PT Demi";
+  font-weight: 500;
+}
+
+.streets__close {
+  fill: #cccccc;
+  width: 16px;
+  height: 16px;
+}
+
+.streets__bottom {
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.streets__item {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .channels {
@@ -3804,25 +3858,6 @@ h6 {
   background-color: #182f4f;
 }
 
-.ipack_exc {
-  background-image: url("../images/content/index/tariffs/bg.png");
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-@media screen and (max-width: 1199.98px) {
-  .ipack_exc {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-}
-
-.ipack_exc:hover {
-  background-color: #184857;
-}
-
 .ipack_w {
   background-color: #f6f6f6;
   color: #112e49;
@@ -3841,6 +3876,26 @@ h6 {
 
 .ipack_w .ipack__link:hover .ipack__link-price {
   color: #112e49;
+}
+
+.ipack_exc {
+  background-image: url("../images/content/index/tariffs/bg.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-color: #0f3642;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .ipack_exc {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.ipack_exc:hover {
+  background-color: #184857;
 }
 
 .ipack__title {
@@ -5910,16 +5965,6 @@ h6 {
   font-size: 16px;
 }
 
-.news {
-  padding-bottom: 230px;
-}
-
-@media screen and (max-width: 767.98px) {
-  .news {
-    padding-bottom: 80px;
-  }
-}
-
 .news__row {
   margin-left: -20px;
   margin-right: -20px;
@@ -6066,6 +6111,7 @@ h6 {
 }
 
 .news__left {
+  width: 230px;
   min-width: 230px;
   border-radius: 10px;
   position: relative;
@@ -6160,6 +6206,16 @@ h6 {
   }
 }
 
+.news__feed {
+  margin-top: 230px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .news__feed {
+    margin-top: 80px;
+  }
+}
+
 .nblock {
   border-radius: 20px;
   background-color: #112e49;
@@ -6228,6 +6284,26 @@ h6 {
   height: 18px;
 }
 
+.pag__prev {
+  margin-right: 55px !important;
+}
+
+@media screen and (max-width: 767.98px) {
+  .pag__prev {
+    margin-right: auto !important;
+  }
+}
+
+.pag__next {
+  margin-left: 55px !important;
+}
+
+@media screen and (max-width: 767.98px) {
+  .pag__next {
+    margin-left: auto !important;
+  }
+}
+
 .pag__list {
   margin: 0 55px;
   display: -webkit-box;
@@ -6244,7 +6320,7 @@ h6 {
   }
 }
 
-.pag__item {
+.pag a, .pag span {
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -6267,22 +6343,22 @@ h6 {
 }
 
 @media screen and (max-width: 767.98px) {
-  .pag__item {
+  .pag a, .pag span {
     font-size: 18px;
     width: 35px;
     height: 35px;
   }
 }
 
-.pag__item:hover {
+.pag a:hover, .pag span:hover {
   color: #112e49;
 }
 
-.pag__item:last-child {
+.pag a:last-child, .pag span:last-child {
   margin-right: 0;
 }
 
-.pag__item.active {
+.pag a.active, .pag span.active {
   background-color: #112e49;
   color: #ffffff;
 }

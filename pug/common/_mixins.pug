@@ -188,7 +188,8 @@ mixin connect(map)
                                             .fstreets__list
                                                 each i in col.list
                                                     .fstreets__item= i
-                                            a(href=col.link).fstreets__link Смотреть весь список
+                                            a(href=col.link data-id=11).fstreets__link.jsStreets Смотреть весь список
+
 
                             .fstreets__right
                                 .fstreets__block

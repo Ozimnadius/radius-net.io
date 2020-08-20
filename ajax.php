@@ -29,6 +29,13 @@ switch ($action) {
         ));
         exit();
         break;
+    case 'streets':
+        echo json_encode(array(
+            'html' => streetsForm($_POST['id']),
+            'status' => true
+        ));
+        exit();
+        break;
     default:
         echo json_encode(array(
             'status' => false,
@@ -217,6 +224,28 @@ function packsForm($id)
                     </div>
                 <? endfor; ?>
             </div>
+        </div>
+    </div>
+    <?
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
+}
+
+function streetsForm($id)
+{
+    $html = '';
+    ob_start();
+    ?>
+    <div class="streets">
+        <div class="streets__top">
+            <div class="streets__title">г. Улан-Удэ</div><a class="streets__close jsFormClose" href="#">
+                <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.7002 17.0161L12.8131 10.129L19.7002 3.24185C20.4438 2.49829 20.4438 1.30122 19.7002 0.557666C18.9567 -0.185889 17.7596 -0.185889 17.0161 0.557666L10.129 7.44478L3.24184 0.557666C2.49829 -0.185889 1.30122 -0.185889 0.557666 0.557666C-0.185889 1.30122 -0.185889 2.49829 0.557666 3.24185L7.44477 10.129L0.557666 17.0161C-0.185889 17.7596 -0.185889 18.9567 0.557666 19.7002C1.30122 20.4438 2.49829 20.4438 3.24184 19.7002L10.129 12.8131L17.0161 19.7002C17.7596 20.4438 18.9567 20.4438 19.7002 19.7002C20.4385 18.9567 20.4385 17.7543 19.7002 17.0161Z"/>
+                </svg></a>
+        </div>
+        <div class="streets__bottom">
+            <div class="streets__item">пр.Строителей 42</div>
         </div>
     </div>
     <?

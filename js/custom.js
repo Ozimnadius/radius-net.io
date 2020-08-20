@@ -205,6 +205,37 @@ $(function () {
 
     });
 
+    $('body').on('click','.jsStreets', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let $this= $(this),
+            id = $this.data('id'),
+            data = {
+                action: 'streets',
+                id: id
+            },
+            url = '/ajax.php';
+
+        $.ajax({
+            dataType: "json",
+            type: "POST",
+            url: url,
+            data: data,
+            success: function (result) {
+                if (result.status) {
+                    openForm(result.html);
+                } else {
+                    alert('Что-то пошло не так, попробуйте еще раз!!!');
+                }
+            },
+            error: function (result) {
+                alert('Что-то пошло не так, попробуйте еще раз!!!');
+            }
+        });
+
+    });
+
 });
 
 /*YANDEX*/

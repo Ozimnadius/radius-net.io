@@ -742,23 +742,6 @@
     background-color: #182f4f;
   }
 
-  &_exc {
-    background-image: url("../images/content/index/tariffs/bg.png");
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    //background-color: $dark;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    @include lg-block {
-      padding-top: 25px;
-      padding-bottom: 25px;
-    }
-
-    &:hover {
-      background-color: #184857;
-    }
-  }
-
   &_w {
     background-color: $grey7;
     color: $text;
@@ -783,6 +766,23 @@
           }
         }
       }
+    }
+  }
+
+  &_exc {
+    background-image: url("../images/content/index/tariffs/bg.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: $dark;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include lg-block {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    &:hover {
+      background-color: #184857;
     }
   }
 

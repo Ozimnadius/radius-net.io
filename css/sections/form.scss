@@ -239,3 +239,38 @@
   }
 
 }
+
+.streets{
+  width: 320px;
+  background: #F6F6F6;
+
+  &__top{
+    background: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  &__title{
+    font-size: 18px;
+    @include demi;
+  }
+
+  &__close{
+    fill: $grey6;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__bottom{
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__item{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}

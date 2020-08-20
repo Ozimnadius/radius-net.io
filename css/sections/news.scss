@@ -1,8 +1,4 @@
 .news {
-  padding-bottom: 230px;
-  @include sm-block {
-    padding-bottom: 80px;
-  }
 
   &__row {
     margin-left: -20px;
@@ -75,6 +71,7 @@
   }
 
   &__left {
+    width: 230px;
     min-width: 230px;
     border-radius: 10px;
     position: relative;
@@ -141,6 +138,14 @@
     }
   }
 
+  &__feed{
+    margin-top: 230px;
+    @include sm-block {
+      margin-top: 80px;
+    }
+
+  }
+
 }
 
 .nblock {
@@ -193,6 +198,20 @@
 
   }
 
+  &__prev{
+    margin-right: 55px!important;
+    @include sm-block{
+      margin-right: auto!important;
+    }
+  }
+
+  &__next{
+    margin-left: 55px!important;
+    @include sm-block{
+      margin-left: auto!important;
+    }
+  }
+
   &__list {
     margin: 0 55px;
     display: flex;
@@ -202,7 +221,7 @@
     }
   }
 
-  &__item {
+  a,span{
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -233,9 +252,42 @@
       background-color: $text;
       color: $bg;
     }
-
-
   }
+
+  //&__item {
+  //  width: 40px;
+  //  height: 40px;
+  //  background-color: transparent;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  text-align: center;
+  //  margin-right: 5px;
+  //  font-size: 24px;
+  //  color: rgba($text, .5);
+  //  @include tr;
+  //
+  //  @include sm-block {
+  //    font-size: 18px;
+  //    width: 35px;
+  //    height: 35px;
+  //  }
+  //
+  //  &:hover {
+  //    color: rgba($text, 1);
+  //  }
+  //
+  //  &:last-child {
+  //    margin-right: 0;
+  //  }
+  //
+  //  &.active {
+  //    background-color: $text;
+  //    color: $bg;
+  //  }
+  //
+  //
+  //}
 
 }
 

@@ -280,6 +280,12 @@
     padding: 20px 0;
     position: relative;
     display: block;
+    &.active{
+      color: $y;
+      &:after {
+        border-color: $y transparent transparent transparent;
+      }
+    }
 
 
     &_arr {
@@ -339,6 +345,10 @@
     @include tr;
 
     &:hover {
+      color: $y;
+    }
+
+    &.active{
       color: $y;
     }
 

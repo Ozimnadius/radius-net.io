@@ -551,7 +551,7 @@
     position: absolute !important;
     bottom: 7% !important;
     left: 15% !important;
-    right: initial!important;
+    right: initial !important;
     top: initial !important;
   }
 
@@ -560,7 +560,7 @@
     position: absolute !important;
     bottom: 17% !important;
     right: 15% !important;
-    left: initial!important;
+    left: initial !important;
     top: initial !important;
 
   }
@@ -776,6 +776,7 @@
     background-color: $dark;
     padding-top: 50px;
     padding-bottom: 50px;
+    color: $blue-light;
     @include lg-block {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -783,6 +784,20 @@
 
     &:hover {
       background-color: #184857;
+    }
+
+    .ipack {
+      &__link {
+        &:hover {
+          .ipack {
+            &__link {
+              &-price {
+                color: $bg !important;
+              }
+            }
+          }
+        }
+      }
     }
   }
 

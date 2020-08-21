@@ -131,8 +131,6 @@ $(function () {
 
         openForm(form);
 
-
-
         form.validate({
             rules: {
                 name: "required",
@@ -170,6 +168,7 @@ $(function () {
                 });
             },
         });
+
         $('input[type=tel]').mask('+7 (999) 999-99-99');
 
     });
@@ -205,7 +204,7 @@ $(function () {
 
     });
 
-    $('body').on('click','.jsStreets', function (e) {
+    $('body').on('click','.jsStreets', function (e)     {
         e.preventDefault();
         e.stopPropagation();
 
@@ -215,7 +214,7 @@ $(function () {
                 action: 'streets',
                 id: id
             },
-            url = '/ajax.php';
+            url = '/ajax/ajax.php';
 
         $.ajax({
             dataType: "json",
